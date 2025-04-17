@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hidden,
+.curve {
+    display: none;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* justify-content: space-between; */
+    /* gap: 2rem; */
+    /* flex-wrap: wrap; */
+}
+
+.text {
+    flex: 1 1 40%;
+    font-size: 1.8rem;
+    color: var(--Dark-Blue);
+    position: relative;
+}
+
+.quotes {
+    margin-bottom: -2.5rem;
+    margin-left: 2rem;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: .6rem;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.job {
+    font-size: 1rem;
+    color: var(--Grayish-Blue);
+}
+
+.profile {
+    flex: 1 1 40%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tanya-profile,
+.john-profile {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Background SVG */
+.profile::before {
+    content: '';
+    position: absolute;
+    background-image: url(images/pattern-bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 500px;
+    top: -50px;
+    z-index: -1;
+}
+
+/* Switch Buttons */
+.controls {
+    display: flex;
+    gap: .5rem;
+    background-color: white;
+    padding: .5rem;
+    border-radius: 30px;
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.switch-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    padding: .5rem .8rem;
+    cursor: pointer;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 950px) {
+    article {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+    }
+
+    .text, .profile {
+        width: 100%;
+    }
+
+    .quotes {
+        display: flex;
+        justify-content: center;
+    }
+    .text{
+        margin-top: 5rem;
+    }
+    .info {
+        flex-direction: column;
+        gap: .3rem;
+    }
+    .profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .profile::before {
+        position: absolute;
+        transform: translate(-50%, -40%);
+        top: 45%;
+        left: 50%;
+    }
+    .curve{
+        display: block;
+        img{
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 1rem;
+    }
+
+    .text {
+        margin-top: 3.4rem;
+        font-size: 1.2rem;
+    }
+    .quotes img{
+        width: 30%;
+        margin
+    }
+    .tanya-profile,
+    .john-profile {
+        max-width: 300px;
+    }
+    .profile::before {
+        width: 350px;
+        height: 350px;
+    }
+    .controls {
+        gap: .3rem;
+        padding: .4rem;
+    }
+}
