@@ -23,8 +23,7 @@ main {
     max-width: 1200px;
 }
 
-.hidden,
-.curve {
+.hidden{
     display: none;
 }
 
@@ -32,9 +31,6 @@ article {
     display: flex;
     align-items: center;
     width: 100%;
-    /* justify-content: space-between; */
-    /* gap: 2rem; */
-    /* flex-wrap: wrap; */
 }
 
 .text {
@@ -149,14 +145,6 @@ article {
         transform: translate(-50%, -40%);
         top: 45%;
         left: 50%;
-    }
-    .curve{
-        display: block;
-        img{
-            width: 100%;
-            position: absolute;
-            left: 0;
-        }
     }
 }
 
